@@ -1,0 +1,12 @@
+.recipe_item {
+  width: 48%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe_item>img {
+  width: 100%;
+}
