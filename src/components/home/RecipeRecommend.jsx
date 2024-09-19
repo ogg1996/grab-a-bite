@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import RecipeItem from './RecipeItem';
 
-const RecipeRecommendCSS = styled.div`
+const StyledRecipeRecommend = styled.div`
   flex-grow: 1;
   padding-top: 30px;
 
@@ -18,7 +18,7 @@ function RecipeRecommend({ data }) {
   const [recommend, setRecommend] = useState([]);
 
   return (
-    <RecipeRecommendCSS>
+    <StyledRecipeRecommend>
       <button
         onClick={() => {
           const rand = Math.floor(Math.random() * (537 - 1) + 1);
@@ -38,7 +38,7 @@ function RecipeRecommend({ data }) {
         음.. 뭐 해 먹지? 추천해 줘!
       </button>
       {recommend.length > 0 ? recommend[recommend.length - 1] : <></>}
-    </RecipeRecommendCSS>
+    </StyledRecipeRecommend>
   );
 }
 

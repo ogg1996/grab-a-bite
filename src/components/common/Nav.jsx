@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const Navigation = styled.nav`
+const StyeldNav = styled.nav`
   display: flex;
   gap: 20px;
   padding: 20px;
-  div {
+  & > div {
     flex-grow: 1;
     font-size: 20px;
     color: #cccccc;
@@ -15,7 +15,7 @@ const Navigation = styled.nav`
 
 function Nav({ menus, setMode }) {
   return (
-    <Navigation>
+    <StyeldNav>
       {menus.map(el => {
         return (
           <div key={el.title} onClick={() => setMode(el.mode)}>
@@ -23,7 +23,7 @@ function Nav({ menus, setMode }) {
           </div>
         );
       })}
-    </Navigation>
+    </StyeldNav>
   );
 }
 

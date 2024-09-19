@@ -1,8 +1,9 @@
 import Header from '@components/common/Header';
 import Recipe from '@components/detail/Recipe';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 
-const DetailCSS = styled.div`
+const StyledDetail = styled.div`
   display: flex;
   width: 500px;
   min-height: 100vh;
@@ -10,11 +11,13 @@ const DetailCSS = styled.div`
 `;
 
 function Detail() {
+  useEffect(() => {});
+
   return (
-    <DetailCSS>
+    <StyledDetail>
       <Header />
       <Recipe />
-    </DetailCSS>
+    </StyledDetail>
   );
 }
 

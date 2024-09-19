@@ -1,7 +1,7 @@
 import RecipeItem from '@components/home/RecipeItem';
 import styled from 'styled-components';
 
-const RecipeListCSS = styled.div`
+const StyledRecipeList = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -10,7 +10,7 @@ const RecipeListCSS = styled.div`
 
 function RecipeList({ data }) {
   return (
-    <RecipeListCSS>
+    <StyledRecipeList>
       {data.map(el => (
         <RecipeItem
           key={el.RECIPE_ID}
@@ -20,7 +20,7 @@ function RecipeList({ data }) {
           cookingTime={el.COOKING_TIME}
         />
       ))}
-    </RecipeListCSS>
+    </StyledRecipeList>
   );
 }
 

@@ -7,18 +7,19 @@ import imgData from '@/assets/data_img.json';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-const HomeCss = styled.div`
+const StyledHome = styled.div`
   display: flex;
   width: 500px;
   min-height: 100vh;
   flex-direction: column;
 
-  .header {
+  & div:first-child {
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
 `;
+
 function Home() {
   const menus = [
     { title: '음식추천', mode: 'recommend' },
@@ -56,13 +57,13 @@ function Home() {
   };
 
   return (
-    <HomeCss>
+    <StyledHome>
       <div className="header">
         <Header />
         <Nav menus={menus} setMode={setMode} />
       </div>
       {changeMode()}
-    </HomeCss>
+    </StyledHome>
   );
 }
 

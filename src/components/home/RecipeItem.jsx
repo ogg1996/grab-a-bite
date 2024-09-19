@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Item = styled.div`
+const StyledRecipeItem = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,12 +18,12 @@ const Item = styled.div`
 
   cursor: pointer;
 
-  img {
+  & > img {
     width: 150px;
     height: 150px;
     border-radius: 5px;
   }
-  div {
+  & > div {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -46,7 +46,7 @@ function RecipeItem({ name, sumry, imgUrl, cookingTime }) {
   const [isHover, setIsHover] = useState(false);
   const navigate = useNavigate();
   return (
-    <Item
+    <StyledRecipeItem
       onMouseOver={() => setIsHover(true)}
       onMouseOut={() => setIsHover(false)}
       onClick={() => navigate('/detail')}
@@ -60,7 +60,7 @@ function RecipeItem({ name, sumry, imgUrl, cookingTime }) {
         <img src={imgUrl} alt="음식" />
       )}
       <p>{name}</p>
-    </Item>
+    </StyledRecipeItem>
   );
 }
 
