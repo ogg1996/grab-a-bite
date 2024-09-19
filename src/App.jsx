@@ -1,32 +1,46 @@
-import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from '@pages/Home';
+import Detail from '@pages/Detail';
+import { createGlobalStyle } from 'styled-components';
 
-import '@/index.css'
-import '@/App.css'
-
-import Header from '@pages/Header'
-import Nav from '@pages/Nav'
-import Article from '@pages/Article'
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    user-select: none;
+  }
+  html {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    margin: 0 auto;
+  }
+  body {
+    width: 100%;
+    min-height: 100vh;
+  }
+  #root {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .app{
+    border: solid 1px #d4d7dc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+  }
+`;
 
 function App() {
-  const menus = [
-    { title: '음식 추천', changeMode: 'recommend' },
-    { title: '레시피 목록', changeMode: 'recipeList' }
-  ]
-  const [mode, setMode] = useState('recommend');
-
   return (
-    <div id='container'>
-      {/* title */}
-      <Header title='간편한 한끼' />
-      {/* menu */}
-      <Nav
-        setMode={setMode}
-        menus={menus}
-      />
-      {/* contents -> 랜덤, 레시피 목록, 레시피 상세보기 */}
-      <Article mode={mode} setMode={setMode} />
-    </div>
-  )
+    <>
+      <GlobalStyle />
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/detail" element={<Detail />} />
+        </Routes>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
