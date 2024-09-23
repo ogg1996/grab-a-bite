@@ -1,7 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+
 import Home from '@pages/Home';
 import Detail from '@pages/Detail';
-import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   * {

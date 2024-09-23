@@ -1,7 +1,48 @@
 {
-  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "extends": [
+    "airbnb", // Airbnb 스타일 가이드만 적용
+    "plugin:react/recommended", // React 권장 규칙
+    "plugin:prettier/recommended" // Prettier와 충돌하는 규칙 비활성화
+  ],
+  "plugins": [
+    "react", // React 플러그인
+    "react-hooks", // React Hooks 플러그인
+    "jsx-a11y", // JSX 접근성 플러그인
+    "prettier" // Prettier 플러그인
+  ],
   "rules": {
-    "prettier/prettier": ["error"]
+    "prettier/prettier": "error", // Prettier 규칙을 에러로 처리
+    "react/self-closing-comp": "error", // JSX 자식이 없는 태그를 self-closing으로 강제
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": true }
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx"] }
+    ],
+    "import/prefer-default-export": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off" // 프롭 타입 유효성 검사 x
   },
-  "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./src"],
+          ["@assets", "./src/assets"],
+          ["@pages", "./src/pages"],
+          ["@components", "./src/components"],
+          ["@common", "./src/components/common"],
+          ["@detail", "./src/components/detail"],
+          ["@home", "./src/components/home"]
+        ],
+        "extensions": [".js", ".jsx", ".json"]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  }
 }
