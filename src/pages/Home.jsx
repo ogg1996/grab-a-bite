@@ -13,9 +13,9 @@ const StyledHome = styled.div`
   min-height: 100vh;
   flex-direction: column;
 
-  & div:first-child {
+  & > div:first-child {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
 `;
@@ -58,7 +58,7 @@ function Home() {
 
   return (
     <StyledHome>
-      <div className="header">
+      <div>
         <Header />
         <Nav menus={menus} setMode={setMode} />
       </div>

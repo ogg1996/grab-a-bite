@@ -14,6 +14,7 @@ function RecipeList({ data }) {
       {data.map(el => (
         <RecipeItem
           key={el.RECIPE_ID}
+          recipeId={el.RECIPE_ID}
           name={el.RECIPE_NM_KO}
           sumry={el.SUMRY}
           imgUrl={el.IMG_URL}

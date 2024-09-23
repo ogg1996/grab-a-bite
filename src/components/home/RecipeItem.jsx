@@ -42,14 +42,14 @@ const StyledRecipeItem = styled.div`
   }
 `;
 
-function RecipeItem({ name, sumry, imgUrl, cookingTime }) {
+function RecipeItem({ recipeId, name, sumry, imgUrl, cookingTime }) {
   const [isHover, setIsHover] = useState(false);
   const navigate = useNavigate();
   return (
     <StyledRecipeItem
       onMouseOver={() => setIsHover(true)}
       onMouseOut={() => setIsHover(false)}
-      onClick={() => navigate('/detail')}
+      onClick={() => navigate(`/detail/${recipeId}`)}
     >
       {isHover ? (
         <div>

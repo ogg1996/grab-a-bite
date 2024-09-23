@@ -27,6 +27,7 @@ function RecipeRecommend({ data }) {
           setRecommend([
             ...recommend,
             <RecipeItem
+              recipeId={recommendEl.RECIPE_ID}
               name={recommendEl.RECIPE_NM_KO}
               sumry={recommendEl.SUMRY}
               imgUrl={recommendEl.IMG_URL}

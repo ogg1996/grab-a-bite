@@ -4,6 +4,7 @@ const StyeldNav = styled.nav`
   display: flex;
   gap: 20px;
   padding: 20px;
+  
   & > div {
     flex-grow: 1;
     font-size: 20px;

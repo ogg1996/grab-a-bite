@@ -1,6 +1,6 @@
 import Header from '@components/common/Header';
 import Recipe from '@components/detail/Recipe';
-import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledDetail = styled.div`
@@ -11,12 +11,11 @@ const StyledDetail = styled.div`
 `;
 
 function Detail() {
-  useEffect(() => {});
-
+  const params = useParams();
   return (
     <StyledDetail>
       <Header />
-      <Recipe />
+      <Recipe recipeId={params.recipeId} />
     </StyledDetail>
   );
 }

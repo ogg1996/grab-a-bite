@@ -36,7 +36,7 @@ function App() {
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/detail/:recipeId" element={<Detail />} />
         </Routes>
       </div>
     </>
