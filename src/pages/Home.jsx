@@ -31,7 +31,7 @@ function Home() {
   useEffect(() => {
     const apiKey =
       '5665c5ba7985aef70563466f7b456b620e9747ab775744842534a47b1621ea04';
-    let url = `/api/openapi/${apiKey}/json/Grid_20150827000000000226_1/1/537`;
+    const url = `/api/openapi/${apiKey}/json/Grid_20150827000000000226_1/1/537`;
 
     fetch(url)
       .then(res => res.json())

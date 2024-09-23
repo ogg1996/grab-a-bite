@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import logo from '@/assets/logo.jpg';
+import logo from '@assets/logo.jpg';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
