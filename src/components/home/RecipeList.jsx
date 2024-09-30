@@ -15,7 +15,7 @@ function RecipeList({ data }) {
         <RecipeItem
           key={el.RECIPE_ID}
           recipeId={el.RECIPE_ID}
-          name={el.RECIPE_NM_KO}
+          name={el.NAME}
           sumry={el.SUMRY}
           imgUrl={el.IMG_URL}
           cookingTime={el.COOKING_TIME}

@@ -30,7 +30,7 @@ function RecipeRecommend({ data }) {
             <RecipeItem
               key={new Date()}
               recipeId={recommendEl.RECIPE_ID}
-              name={recommendEl.RECIPE_NM_KO}
+              name={recommendEl.NAME}
               sumry={recommendEl.SUMRY}
               imgUrl={recommendEl.IMG_URL}
               cookingTime={recommendEl.COOKING_TIME}
